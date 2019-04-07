@@ -9,6 +9,7 @@ nginx:
     - ./log/nginx/:/var/log/nginx
   links:
     - php56:fpm56
+    - php71:fpm71
 
 php56:
   image: php:5.6-fpm-alpine
@@ -18,4 +19,13 @@ php56:
     - ./html:/usr/share/nginx/html
     - ./conf/php/php56/php.ini:/usr/local/etc/php/php.ini
     - ./conf/php/php56/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf
+    - ./log/php/:/var/log/php-fpm
+php71:
+  image: php:7.1-fpm-alpine
+  expose:
+    - "9000"
+  volumes:
+    - ./html:/usr/share/nginx/html
+    - ./conf/php/php71/php.ini:/usr/local/etc/php/php.ini
+    - ./conf/php/php71/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf
     - ./log/php/:/var/log/php-fpm
