@@ -31,7 +31,10 @@ services:
     container_name: "mrmoll-php56"
 
   php71:
-    image: php:7.1-fpm-alpine
+    build:
+      context: ./build/php/php71
+      dockerfile: Dockerfile
+    image: mrmoll:php71-fpm-alpine
     expose:
       - "9000"
     volumes:
