@@ -4,6 +4,7 @@ services:
     image: nginx:alpine
     ports:
       - "80:80"
+    privileged: true
     volumes:
       - ./html:/usr/share/nginx/html
       - ./conf/nginx/conf.d:/etc/nginx/conf.d
@@ -21,6 +22,7 @@ services:
     image: mrmoll:php56-fpm-alpine
     expose:
       - "9000"
+    privileged: true
     volumes:
       - ./html:/usr/share/nginx/html
       - ./conf/php/php56/php.ini:/usr/local/etc/php/php.ini
@@ -37,6 +39,7 @@ services:
     image: mrmoll:php71-fpm-alpine
     expose:
       - "9000"
+    privileged: true
     volumes:
       - ./html:/usr/share/nginx/html
       - ./conf/php/php71/php.ini:/usr/local/etc/php/php.ini
