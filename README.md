@@ -11,7 +11,11 @@ docker-compose up
 ~~~
 docker-compose up -d
 ~~~
-若自己给php添加扩展，需要重新编译镜像
+若自己给php添加扩展，在对应版本的php dockerfile下增加命令 (有些扩展可能比较难装，需自行google解决)
+~~~
+docker-php-ext-install 扩展名
+~~~
+安装新的扩展之后需要重新编译镜像 然后在启动服务
 ~~~
 docker-compose build
 ~~~
