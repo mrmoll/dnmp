@@ -28,7 +28,7 @@ docker-compose down
 5、nginx网站根目录挂在到项目文件夹的html文件夹下，当php代码里出现mkdir等命令时可能会无权限创建文件和文件夹，
 查看php-fmp的配置文件 www.conf文件可以发现 user = www-data group = www-data ,这代表fpm的用户和用户组都是www-data，  
 而在php容器里使用命令cat /etc/passwd | grep www-data 可以看到 www-data的用户uid和组uid都是82，  
-所以只要把html下的每个项目文件夹 执行chown -R 82:82 命令就可以了
+所以只要把html下的每个项目文件夹 执行chown -R 82:82 命令就可以了  
 执行composer命令
 ~~~
 docker-compose run php71 composer config -gl
