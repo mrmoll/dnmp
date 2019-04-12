@@ -48,7 +48,22 @@ services:
     networks:
       - app_net
     container_name: "mrmoll-php71"
-
+  mysql57:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    privileged: true
+    volumes:
+      - ./conf/mysql/conf.d/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+      - ./conf/mysql/mysql.conf.d/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+      - ./data/mysql/:/var/lib/mysql/
+      - ./log/mysql/:/var/log/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+    networks:
+      - app_net
+    # 容器名称
+    container_name: "mrmoll-mysql57"
 networks:
   # 配置docker network
   app_net:

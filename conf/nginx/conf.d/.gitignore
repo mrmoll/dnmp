@@ -1,0 +1,7 @@
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
+!a.com.conf
+!b.com.conf
+!default.com.conf
