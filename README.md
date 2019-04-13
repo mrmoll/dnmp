@@ -33,3 +33,7 @@ docker-compose down
 ~~~
 docker-compose run php71 composer config -gl
 ~~~
+安装laravel
+~~~
+docker-compose run --rm -w /usr/share/nginx/html/ php71 composer create-project --prefer-dist laravel/laravel l58 5.8.*
+~~~
