@@ -33,7 +33,8 @@ docker-compose down
 ~~~
 docker-compose run php71 composer config -gl
 ~~~
-安装laravel
+安装laravel 和执行artisa命令
 ~~~
 docker-compose run --rm -w /usr/share/nginx/html/ php71 composer create-project --prefer-dist laravel/laravel l58 5.8.*
+docker-compose run --rm -w /usr/share/nginx/html/l58 php71 /usr/share/nginx/html/l58/artisan make:controller userController
 ~~~
