@@ -2,6 +2,7 @@
 *
 # Except this file
 !.gitignore
-!a.com.conf
-!b.com.conf
-!default.com.conf
+!vhost/
+!vhost/a.com.conf
+!vhost/b.com.conf
+!default.conf
