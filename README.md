@@ -38,3 +38,5 @@ docker-compose run php71 composer config -gl
 docker-compose run --rm -w /usr/share/nginx/html/ php71 composer create-project --prefer-dist laravel/laravel l58 5.8.*
 docker-compose run --rm -w /usr/share/nginx/html/l58 php71 /usr/share/nginx/html/l58/artisan make:controller userController
 ~~~
+docker hub用的是国内中科大的镜像源，四月20号左右发现该源有点不稳定，刚开始拉取镜像的时候可能会有拉取失败的问题，需要多拉取几次。
+---
