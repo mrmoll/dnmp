@@ -45,3 +45,5 @@ docker-compose run --rm -w /usr/share/nginx/html/l58 php71 /usr/share/nginx/html
 ~~~
 docker hub用的是国内中科大的镜像源，四月20号左右发现该源有点不稳定，刚开始拉取镜像的时候可能会有拉取失败的问题，需要多拉取几次。
 ---
+注意：该项目mysql中root帐号的密码是root,如果在公网上拉取此项目，请把docker-compose.yml文件中MYSQL_ROOT_PASSWORD变量改成其他复杂的密码，否则有被黑客攻击的危险
+---
